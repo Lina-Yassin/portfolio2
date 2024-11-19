@@ -1,0 +1,357 @@
+<html>
+    <head>
+        <title>LimyStudio.com</title>
+        <style>
+            
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Arial', sans-serif;
+                color: rgb(66, 61, 61);
+                background-color: rgb(255, 255, 255);
+            }
+            
+            
+            header {
+                background-color: #778899;
+                position: sticky;
+                top: 0;
+                height: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: rgb(255, 255, 255);
+                padding: 0 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .my-name {
+                font-size: 22px;
+                font-family: 'Courier New', monospace;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin: 0;
+                padding: 10px;
+                border: 2px solid #fff;
+                box-shadow: 0 0 10px rgba(177, 170, 170, 0.5);
+               
+            }
+
+
+            h4 {
+                margin: 0 20px;
+                cursor: pointer;
+                font-size: 18px;
+                font-weight: 600;
+                transition: color 0.3s;
+            }
+
+            h4:hover {
+                color: #ff8c00;
+            }
+
+            .iqons {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                cursor: pointer;
+            }
+
+            .iqons img {
+                width: 30px;
+                height: 30px;
+                object-fit: contain;
+                transition: transform 0.3s ease;
+            }
+
+            .iqons img:hover {
+                transform: scale(1.1);
+            }
+            .information {
+                display: flex;
+                flex-direction: row;
+                margin-right: 170px;
+            }
+
+            .information h4 {
+                margin: 0 10px;  
+            }
+            
+            .my-paintings {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 20px;
+                padding: 40px;
+                margin-top: 20px;
+            }
+
+            .painting {
+                background-color: #f9f9f9;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
+
+            .painting:hover {
+                transform: scale(1.05);
+            }
+
+            .painting img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                border-bottom: 2px solid #ccc;
+            }
+
+            .painting-comment {
+                padding: 15px;
+                background-color: #fff;
+                text-align: center;
+                font-size: 1rem;
+                color: #333;
+                border-top: 1px solid #ccc;
+            }
+
+            .painting-comment p {
+                margin: 0;
+                font-style: italic;
+            }
+
+            .painting-comment a {
+                color: #778899;
+                text-decoration: none;
+                font-weight: bold;
+                margin-top: 10px;
+                display: inline-block;
+            }
+
+            .painting-comment a:hover {
+                text-decoration: underline;
+            }
+
+           
+            .about-me {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin: 80px auto;
+                padding: 40px;
+                max-width: 1200px;
+                font-size: 1.2rem;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #f9f9f9;
+                border-radius: 12px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .about-me img {
+                width: 400px;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                object-fit: cover;
+            }
+
+            .about-me .text {
+                max-width: 600px;
+                margin-right: 50px;
+            }
+
+            .about-me h2 {
+                font-size: 2rem;
+                font-weight: 700;
+                margin-bottom: 20px;
+                color: #333;
+                text-transform: uppercase;
+            }
+
+            .about-me p {
+                line-height: 1.8;
+                color: #555;
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+
+            .about-me p b {
+                font-weight: 700;
+            }
+
+            .about-me p .highlight {
+                 color: #ff8c00;
+                font-weight: 600;
+            }
+
+
+            .footer {
+                background-color: #f1f1f1;
+                padding: 30px;
+                text-align: center;
+                color: #333;
+                box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .footer p {
+                margin-bottom: 10px;
+                font-size: 1.2rem;
+            }
+
+            .footer .iqons {
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .footer .iqons div {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                font-size: 1rem;
+                cursor: pointer;
+                
+            }
+
+            .footer .iqons div:hover {
+                color: #ff8c00;
+            }
+
+            
+            .footer .whatsapp-comment, .footer .email-comment, .footer .instagram-comment {
+                font-weight: 500;
+            }
+
+        
+        </style>
+    </head>
+    <body>
+        <!---------------------------------------------------------------------------------------------------------------------- -->
+        <header>
+            <h2 class="my-name"><b>Lina Yassin Painter</b></h2>
+
+            <div class="information">
+                <h4 id="my-paintings">My Paintings</h4>
+                <h4 id="about-me">About Me</h4>
+                 <h4 id="contact-me">contac me</h4>
+            </div>
+
+            <div class="iqons">
+                <div class="email"><img src="email.png" alt="Email" /></div>
+                <div class="whatsUp"><img src="whatsapp (1).png" alt="WhatsApp" /></div>
+                <div class="instagram"><img src="instagram.png" alt="Instagram" /></div>
+            </div>
+        </header>
+
+        
+        <h3 class="text" style="text-align: center; margin-top: 40px;">Welcome to My Art Space!</h3>
+        <p style="text-align: center; font-size: 1.2rem;">Explore my vibrant artwork</p>
+
+        <hr>
+
+        
+        <div class="my-paintings">
+           
+            <div class="painting">
+                <img src="flowery.jpeg" />
+                <div class="painting-comment">
+                    <p>"A vibrant flowery scene, capturing the essence of spring."</p>
+                    <a href="https://www.instagram.com/limyartist/">See more on Instagram</a>
+                </div>
+            </div>
+
+           
+            <div class="painting">
+                <img src="pink-flower.jpeg" />
+                <div class="painting-comment">
+                    <p>"Soft, delicate, and full of life – a pink flower's quiet beauty."</p>
+                    <a href="https://www.instagram.com/limyartist/">See more on Instagram</a>
+                </div>
+            </div>
+
+            <div class="painting">
+                <img src="blue.jpeg" />
+                <div class="painting-comment">
+                    <p>"A calming blue composition evoking serenity and peace."</p>
+                    <a href="https://www.instagram.com/limyartist/">See more on Instagram</a>
+                </div>
+            </div>
+
+            <div class="painting">
+                <img src="my_sunflower.jpeg" />
+                <div class="painting-comment">
+                    <p>"A sunflower in full bloom, radiating warmth and joy."</p>
+                    <a href="https://www.instagram.com/limyartist/">See more on Instagram</a>
+                </div>
+            </div>
+
+            <div class="painting">
+                <img src="purple.jpeg" />
+                <div class="painting-comment">
+                    <p>"Mysterious and bold, this purple piece sparks creativity."</p>
+                    <a href="https://www.instagram.com/limyartist/">See more on Instagram</a>
+                </div>
+                
+            </div>
+           
+        </div>
+
+
+        <div class="about-me">
+                <div class="text"><h2>about me</h2><br>
+                <p>Hello! <br>
+                 welcome to my world of color and creativity. My name is Lina Yassin, 
+                 and I am a passionate artist who finds my voice through the transformative power of painting. 
+                 Art has always been an integral part of my life, a way to express the depths of emotion,
+                  the beauty of the natural world, and the infinite complexity of the human experience. 
+                  Through my paintings, I invite viewers to see the world through my eyes—through strokes of color, light, and texture.    
+                </div>
+                <img src="info.jpeg">
+        </div>
+
+        
+        <div class="footer">
+            <p>Contact Me</p>
+            <div class="iqons">
+                <div class="whatsUp">
+                    <img src="whatsapp (1).png" alt="WhatsApp" />
+                    <div class="whatsapp-comment">WhatsApp</div>
+                </div>
+                <div class="email">
+                    <img src="email.png" alt="Email" />
+                    <div class="email-comment">Email</div>
+                </div>
+                <div class="instagram">
+                    <img src="instagram.png" alt="Instagram" />
+                    <div class="instagram-comment">Instagram</div>
+                </div>
+            </div>
+            <p>© 2024 LimyStudio. All rights reserved.</p>
+        </div>
+
+        <script>
+            document.querySelector('.whatsUp').addEventListener('click', function() {
+                const phoneNumber = '+9660570630385';
+                const message = encodeURIComponent("Hello, I would like to inquire about your art!");
+                const url = `https://wa.me/${phoneNumber}?text=${message}`;
+                window.open(url, '_blank');
+            });
+
+            document.querySelector('.instagram').addEventListener('click', function() {
+                const instagramUrl = 'https://www.instagram.com/limyartist/';
+                window.open(instagramUrl, '_blank');
+            });
+
+            document.querySelector('.email').addEventListener('click', function() {
+                const email = 'linaiyassin@gmail.com';
+                const subject = encodeURIComponent('Inquiry about art');
+                const emailUrl = `mailto:${email}?subject=${subject}`;
+                window.location.href = emailUrl;
+            });
+           
+           
+
+        </script>
+    </body>
+</html>
